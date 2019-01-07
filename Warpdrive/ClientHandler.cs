@@ -146,7 +146,7 @@ namespace Warpdrive
                             break;
                         case "udp":
                             Log.Info("Connecting to {0} over UDP", uri);
-                            Link = new ClientLink(new UdpTunnel(IPAddress.Parse(uri.Host), uri.Port));
+                            Link = new ClientLink(new UdpTunnel(IPAddress.Parse(uri.Host), uri.Port, Config.GetInt("network.udp.force_mtu")));
                             break;
                     }
 
